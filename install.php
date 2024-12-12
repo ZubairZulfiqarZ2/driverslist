@@ -10,7 +10,7 @@ function extension_install_driverslist()
     $commonObject -> sqlQuery("CREATE TABLE IF NOT EXISTS `driverslist` (
                               `ID` INT(11) NOT NULL AUTO_INCREMENT,
                               `HARDWARE_ID` INT(11) NOT NULL,
-                              `CLASS` VARCHAR(255) DEFAULT NULL,
+                              `CATEGORY` VARCHAR(255) DEFAULT NULL,
                               `DESCRIPTION` VARCHAR(255) DEFAULT NULL,
                               `NAME` VARCHAR(255) DEFAULT NULL,
                               `PROVIDERNAME` VARCHAR(255) DEFAULT NULL,
