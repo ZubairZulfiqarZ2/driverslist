@@ -20,14 +20,14 @@
 On Error Resume Next
 
 Set objWMIService = GetObject("winmgmts:root\cimv2")
-Set colItems = objWMIService.ExecQuery("Select * from Win32_PnPSignedDriver")
+Set colItems = objWMIService.ExecQuery("Select * from Win32_PnPSignedDriver Where DeviceClass = 'DISPLAY'")
 
 For Each objItem in colItems
 
 	If Not IsNull(objItem.DeviceClass) Then
 		Result = "<DRIVERSLIST>" & VbCrLf
 		Result = Result & "<DESCRIPTION>" & replaceSpecialCar(objItem.Description) & "</DESCRIPTION>" & VbCrLf
-		Result = Result & "<CLASS>" & objItem.DeviceClass & "</CLASS>" & VbCrLf
+		Result = Result & "<CATEGORY>" & objItem.DeviceClass & "</CATEGORY>" & VbCrLf
 		Result = Result & "<DEVICEID>" & objItem.DeviceID & "</DEVICEID>" & VbCrLf
 		Result = Result & "<NAME>" & replaceSpecialCar(objItem.DeviceName) & "</NAME>" & VbCrLf
 

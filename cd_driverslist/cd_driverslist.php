@@ -30,7 +30,7 @@ else{
 	$tab_options['table_name']=$table_name;
 	echo open_form($form_name);
 	$list_fields = array(
-		'Class' => 'CLASS',
+		'CATEGORY' => 'CATEGORY',
 		'Description' => 'DESCRIPTION',
 		'Name' => 'NAME',
 		'Provider' => 'PROVIDERNAME',
